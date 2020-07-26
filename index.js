@@ -11,7 +11,9 @@ const client = new twitter({
 const decisions = [
     "Sim",
     "Não",
-    "Talvez"
+    "Talvez",
+    "DEFINITIVAMENTE SIM.",
+    "DEFINITIVAMENTE NÃO.",
 ]
 
 const stream = client.stream('statuses/filter', { follow: '1103618173927071744'})
