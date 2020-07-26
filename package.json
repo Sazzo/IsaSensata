@@ -1,0 +1,13 @@
+{
+  "name": "IsatoroBot",
+  "version": "1.0.0",
+  "description": "the best bot",
+  "main": "index.js",
+  "author": "FelipeSazz <felipe@sazz.fail>",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "twit": "^2.2.11",
+    "twitter-lite": "^0.14.0"
+  }
+}
