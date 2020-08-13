@@ -9,11 +9,11 @@ const client = new twitter({
 })
 
 const decisions = [
-    "Sim",
-    // "Não",
-    // "Talvez",
-    "DEFINITIVAMENTE SIM."
-    // "DEFINITIVAMENTE NÃO.",
+    { decision: 'Sim', pct: 55000, arr: '55%'},
+    { decision: 'Não', pct: 50000, arr: '50%'},
+    { decision: 'Definitivamente sim', pct: 25000, arr:'25%'},
+    { decision: 'Definitivamente não', pct: 20000, arr:'20%'},
+    { decision: 'Talvez', pct: 13000, arr:'13%'}
 ]
 
 const stream = client.stream('statuses/filter', { follow: '1103618173927071744'})
@@ -23,8 +23,9 @@ stream.on('data', async (tweet) => {
        if(tweet.in_reply_to_status_id_str == null) {
            if(!tweet.is_quote_status || tweet.is_quote_status == null) {
                if(!tweet.text.startsWith('RT')) {
-                    const decision = decisions[Math.floor(Math.random() * decisions.length)]
-                    const reply = await client.post('statuses/update', { in_reply_to_status_id: tweet.id_str, status: `Isa foi sensata nesse tweet? ${decision}`, auto_populate_reply_metadata: true})
+                    const expanded = decisions.flatMap(deci => Array(deci.pct).fill(deci));
+                    const winner = expanded[Math.floor(Math.random() * expanded.length)];
+                    const reply = await client.post('statuses/update', { in_reply_to_status_id: tweet.id_str, status: `Isa foi sensata nesse tweet? ${winner.decision} (Porcentagem da decisão: ${winner.arr})`, auto_populate_reply_metadata: true})
                     console.log('É um tweet valido! Respondido com successo.')
                } else {
                    console.log(`É um RT da Isatoro! | Texto: ${tweet.text}`)
