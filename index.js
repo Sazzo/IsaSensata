@@ -10,9 +10,9 @@ const client = new twitter({
 
 const decisions = [
     { decision: 'Sim', pct: 550000, arr: '55%'},
-    { decision: 'Não', pct: 400000, arr: '50%'},
+    { decision: 'Não', pct: 500000, arr: '50%'},
     { decision: 'Definitivamente sim', pct: 250000, arr:'25%'},
-    { decision: 'Definitivamente não', pct: 150000, arr:'20%'},
+    { decision: 'Definitivamente não', pct: 150000, arr:'15%'},
     { decision: 'Talvez', pct: 13000, arr:'13%'}
 ]
 
@@ -25,7 +25,7 @@ stream.on('data', async (tweet) => {
                if(!tweet.text.startsWith('RT')) {
                     const expanded = decisions.flatMap(deci => Array(deci.pct).fill(deci));
                     const winner = expanded[Math.floor(Math.random() * expanded.length)];
-                    const reply = await client.post('statuses/update', { in_reply_to_status_id: tweet.id_str, status: `Isa foi sensata nesse tweet? ${winner.decision} (Porcentagem da decisão: ${winner.arr})`, auto_populate_reply_metadata: true})
+                    const reply = await client.post('statuses/update', { in_reply_to_status_id: tweet.id_str, status: `Isa foi sensata nesse tweet? ${winner.decision} (Chances de dar "${winner.decision}": ${winner.arr})`, auto_populate_reply_metadata: true})
                     console.log('É um tweet valido! Respondido com successo.')
                } else {
                    console.log(`É um RT da Isatoro! | Texto: ${tweet.text}`)
