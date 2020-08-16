@@ -10,10 +10,10 @@ const client = new twitter({
 
 const decisions = [
     { decision: 'Sim', pct: 550000, arr: '55%'},
-    { decision: 'Não', pct: 500000, arr: '50%'},
+    { decision: 'Não', pct: 520000, arr: '52%'},
     { decision: 'Definitivamente sim', pct: 250000, arr:'25%'},
-    { decision: 'Definitivamente não', pct: 150000, arr:'15%'},
-    { decision: 'Talvez', pct: 13000, arr:'13%'}
+    { decision: 'Definitivamente não', pct: 230000, arr:'23%'},
+    { decision: 'Talvez', pct: 150000, arr:'15%'}
 ]
 
 const stream = client.stream('statuses/filter', { follow: '1103618173927071744'})
