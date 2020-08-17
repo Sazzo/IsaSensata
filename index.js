@@ -10,7 +10,7 @@ const client = new twitter({
 
 const decisions = [
     { decision: 'Sim', pct: 550000, arr: '55%'},
-    { decision: 'Não', pct: 560000, arr: '56%'},
+    { decision: 'Não', pct: 590000, arr: '59%'},
     { decision: 'Definitivamente sim', pct: 250000, arr:'25%'},
     { decision: 'Definitivamente não', pct: 230000, arr:'23%'},
     { decision: 'Talvez', pct: 150000, arr:'15%'}
