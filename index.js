@@ -9,11 +9,11 @@ const client = new twitter({
 })
 
 const decisions = [
-    { decision: 'bot está triste, porém ela foi sensata.', pct: 550000, arr: '55%'},
-    { decision: 'bot está muito triste e bravo, ela não foi sensata', pct: 590000, arr: '59%'},
-    { decision: 'bot está um pouco mais feliz agora, então ela DEFINITIVAMENTE foi sensata.', pct: 250000, arr:'25%'},
-    { decision: 'bot está PUTO! ela não foi sensata', pct: 230000, arr:'23%'},
-    { decision: 'bot está indeciso sobre a sua vida', pct: 150000, arr:'15%'}
+    { decision: '‎‎‎‎‎ ‎', pct: 550000, arr: '55%'},
+    { decision: '‎ ‎', pct: 590000, arr: '59%'},
+    { decision: '‎ ‎', pct: 250000, arr:'25%'},
+    { decision: '‎ ‎', pct: 230000, arr:'23%'},
+    { decision: ' ‎', pct: 150000, arr:'15%'}
 ]
 
 const stream = client.stream('statuses/filter', { follow: '1103618173927071744'})
