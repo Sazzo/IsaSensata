@@ -16,10 +16,10 @@ const decisions = [
     { decision: 'Talvez', pct: 150000, arr:'15%'}
 ]
 
-const stream = client.stream('statuses/filter', { follow: '1103618173927071744'})
+const stream = client.stream('statuses/filter', { follow: '1232986607113863170'})
 stream.on('data', async (tweet) => {
    if(tweet.delete) return console.log('É um tweet deletado, retornando...')
-   if(tweet.user.id_str == '1103618173927071744') {
+   if(tweet.user.id_str == '1232986607113863170') {
        if(tweet.in_reply_to_status_id_str == null) {
            if(!tweet.is_quote_status || tweet.is_quote_status == null) {
                if(!tweet.text.startsWith('RT')) {
