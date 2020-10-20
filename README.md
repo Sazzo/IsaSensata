@@ -24,7 +24,7 @@ Agora, renomeie o arquivo `.env.exemple` para `.env` e preencha os dados de acor
 <br>
 PS: O **USERID** é o ID da conta do Twitter que você deseja responder, realizar ações e etc, você também pode conseguir ele aqui: http://gettwitterid.com
 
-E agora, use `node index.js` e reze para que não dê nenhum erro :pray:
+E agora, use `node src/index.js` e reze para que não dê nenhum erro :pray:
 
 ## AVISO
 
