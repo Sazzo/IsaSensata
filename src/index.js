@@ -18,7 +18,7 @@ const decisions = [
     { decision: 'Talvez', pct: 150000, arr:'15%'}
 ]
 
-const stream = client.stream('statuses/filter', { follow: process.env.USERID})
+const stream = client.stream('statuses/filter', { follow: process.env.USERID })
 stream.on('data', async (tweet) => {
    if(tweet.delete) return console.log('É um tweet deletado, retornando...')
    if(tweet.user.id_str == process.env.USERID) {
